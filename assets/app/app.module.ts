@@ -1,6 +1,3 @@
-import { routing } from './app.routing';
-import { HeaderComponent } from './header.component';
-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +11,9 @@ import { AuthenticationComponent } from "./auth/authentication.component";
 import { LogoutComponent } from './auth/logout.component';
 import { SigninComponent } from './auth/signin.component';
 import { SignupComponent } from './auth/signup.component';
+import { routing } from './app.routing';
+import { HeaderComponent } from './header.component';
+import { HttpModule } from "@angular/http";
 @NgModule({
     declarations: [
         AppComponent,
@@ -27,7 +27,13 @@ import { SignupComponent } from './auth/signup.component';
         SigninComponent,
         SignupComponent
     ],
-    imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule],
+    imports: [
+        BrowserModule, 
+        FormsModule, 
+        routing, 
+        ReactiveFormsModule,
+        HttpModule
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
